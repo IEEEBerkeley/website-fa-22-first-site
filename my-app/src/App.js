@@ -1,40 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { Route } from 'react';
-import { Navbar } from 'react';
-import { Routes } from 'react';
-import { FoodTable } from 'react';
-import { FoodForm } from 'react';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import RecordList from './FoodTable';
+import Create from './FoodForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
 
-function App () {
+const App = () => {
   return (
     <div>
-      <Navbar />
       <Routes>
-        <Route exact path="/" element={<FoodTable/>} />
-        <Route path="/create" element={<FoodForm/>} />
+        <Route exact path="/" element={<RecordList />} />
+        <Route path="/create" element={<Create />} />
       </Routes>
     </div>
   );

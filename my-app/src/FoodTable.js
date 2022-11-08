@@ -5,16 +5,6 @@ const Record = (props) => (
  <tr>
    <td>{props.record.item}</td>
    <td>{props.record.price}</td>
-   <td>
-     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
-     <button className="btn btn-link"
-       onClick={() => {
-         props.deleteRecord(props.record._id);
-       }}
-     >
-       Delete
-     </button>
-   </td>
  </tr>
 );
  
@@ -24,7 +14,7 @@ export default function RecordList() {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     const response = await fetch(`http://localhost:8080/record/`);
+     const response = await fetch(`http://localhost:8080/foods/`);
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
